@@ -1,8 +1,12 @@
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f3f2ef;
+  overflow-x: hidden;
+  /* overflow-y: auto; */
+  
 }
 
 .app_body {
@@ -12,3 +16,10 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+}
+

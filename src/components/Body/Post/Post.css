@@ -25,7 +25,14 @@
 
 .post_buttons {
   display: flex;
-  /* justify-content: space-evenly; */
+  justify-content: space-between;
+}
+.like_buttons {
+  padding-top: 20px;
+  color: #808080;
+}
+.color_Like {
+  color: #0a66c2;
 }
 
 .post_body {

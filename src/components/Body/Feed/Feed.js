@@ -55,7 +55,7 @@ function Feed() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
-              placeholder = "Start a post"
+              placeholder="Start a post"
             />
             <button onClick={sendPost} type="submit">
               Send
@@ -80,15 +80,18 @@ function Feed() {
 
       {/* Posts */}
       <FlipMove>
-        {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
-          <Post
-            key={id}
-            name={name}
-            description={description}
-            message={message}
-            photoUrl={photoUrl}
-          />
-        ))}
+        {posts.map(
+          ({ id, data: { likes, name, description, message, photoUrl } }) => (
+            <Post
+              key={id}
+              name={name}
+              description={description}
+              message={message}
+              photoUrl={photoUrl}
+              // likes={300}
+            />
+          )
+        )}
       </FlipMove>
     </div>
   );

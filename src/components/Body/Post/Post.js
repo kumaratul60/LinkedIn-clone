@@ -26,7 +26,7 @@ const Post = forwardRef(
           <p>{message}</p>
         </div>
         <div className="post_buttons">
-          <div title="Send" className="like_buttons">
+          <div className="like_buttons">
             {liked ? (
               <ThumbUpAltIcon
                 className="color_Like"

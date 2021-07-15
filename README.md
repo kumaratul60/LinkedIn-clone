@@ -48,9 +48,9 @@ Firebase is used for the backend <br>
 
 **Step 1**<br>
 Navigate through the local folder where you want to clone the repository and run<br>
-`git clone https://github.com/ditikrushna/LinkedIn-Clone-Using-React-Redux.git`. It will clone the repo to your local folder.<br>
+`https://github.com/kumaratul60/LinkedIn-clone.git`. It will clone the repo to your local folder.<br>
 **Step 2**<br>
-Run `cd LinkedIn-Clone-Using-React-Redux`<br>
+Run `cd LinkedIn-clone-Using-React-Redux`<br>
 **Step 3**<br>
 Run `npm install` to install the npm packages from the `package.json` file.<br>
 **Step 4**<br>

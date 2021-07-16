@@ -1,5 +1,6 @@
 import { Avatar } from "@material-ui/core";
 import React, { useState, forwardRef } from "react";
+
 import InputOption from "../Feed/InputOption";
 import "./Post.css";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";

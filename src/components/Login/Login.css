@@ -10,6 +10,7 @@
 .login > img {
   object-fit: contain;
   height: 70px;
+  /* width: 100vw; */
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -22,10 +23,14 @@
 .login > form > input {
   width: 350px;
   height: 50px;
-  font-size: 20px;
+  font-size: 15px;
+
   padding-right: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  border-color: #0074b1;
+  outline-width: 0;
+  /* border: none; */
 }
 
 .login > form > button {
@@ -36,10 +41,11 @@
   background-color: #0074b1;
   border-radius: 5px;
   border: none;
+  text-transform: inherit !important;
 }
 
 .login_register {
-  color: #0177b7;
+  color: rgb(4, 107, 163);
   cursor: pointer;
 }
 

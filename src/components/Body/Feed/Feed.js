@@ -12,6 +12,7 @@ import firebase from "firebase";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice";
 import FlipMove from "react-flip-move";
+import UploadImage from "../ImageUpload/UploadImage";
 
 function Feed() {
   const user = useSelector(selectUser);
@@ -63,7 +64,12 @@ function Feed() {
           </form>
         </div>
         <div className="feed_inputOption">
-          <InputOption Icon={ImageIcon} title="Photo" color="#70b5f9" />
+          <InputOption
+            Icon={ImageIcon}
+            title="Photo"
+            color="#70b5f9"
+            onClick={<UploadImage />}
+          />
           <InputOption
             Icon={SubscriptionsIcon}
             title="Video"

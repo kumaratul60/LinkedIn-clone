@@ -1,4 +1,4 @@
-## LinkedIn-Clone-Using-React-Redux
+## LinkedIn clone-Using-React-Redux
 
 ## Table of Contents
 

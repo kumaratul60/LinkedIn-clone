@@ -27,7 +27,7 @@ Firebase is used for the backend <br>
 
 ### Snapshot
 
-<img target="_blank" src="1">
+<img target="_blank" src="1.png">
 
 ## ▶️ Demo
 

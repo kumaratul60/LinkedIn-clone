@@ -17,7 +17,7 @@ Firebase is used for the backend <br>
 
 ## :sparkles: Features
 
-:heavy_check_mark: Users can register using Full name, image url, email, and password.
+:heavy_check_mark: Users can register using Full name, image url, email, and password or signIn with Google.
 
 :heavy_check_mark: Logged in users can can view other peoples posts and can add their own post in the feed.
 

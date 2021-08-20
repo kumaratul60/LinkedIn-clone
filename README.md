@@ -1,4 +1,4 @@
-## LinkedIn-Clone-Using-React-Redux
+## LinkedIn clone Using-React-Redux
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ Firebase is used for the backend <br>
 
 ## :sparkles: Features
 
-:heavy_check_mark: Users can register using Full name, image url, email, and password.
+:heavy_check_mark: Users can register using Full name, image url, email, and password or signIn with Google.
 
 :heavy_check_mark: Logged in users can can view other peoples posts and can add their own post in the feed.
 
@@ -25,9 +25,17 @@ Firebase is used for the backend <br>
 
 :heavy_check_mark: Users can click on avatar on the navbar to sign out.
 
-### Snapshot
+### Snapshots of project 👇
 
-<img target="_blank" src="">
+<img target="_blank" src="1.png">
+
+<img target="_blank" src="2.png">
+
+<img target="_blank" src="3.png">
+
+<img target="_blank" src="4.png">
+
+<img target="_blank" src="5.png">
 
 ## ▶️ Demo
 

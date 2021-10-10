@@ -1,4 +1,4 @@
-import { Avatar } from "@material-ui/core";
+import { Avatar,IconButton } from "@material-ui/core";
 import React, { useState, forwardRef } from "react";
 
 import InputOption from "../Feed/InputOption";
@@ -29,14 +29,19 @@ const Post = forwardRef(
         <div className="post_buttons">
           <div className="like_buttons">
             {liked ? (
+                <IconButton>
               <ThumbUpAltIcon
                 className="color_Like"
                 onClick={(e) => setLiked(false)}
               />
+              </IconButton>
             ) : (
+              <IconButton>
               <ThumbUpAltOutlinedIcon onClick={(e) => setLiked(true)} />
+              </IconButton>
             )}
           </div>
+
 
           <InputOption Icon={ChatOutlinedIcon} />
           <InputOption Icon={ShareOutlinedIcon} />

@@ -94,7 +94,7 @@ function Feed() {
               description={description}
               message={message}
               photoUrl={photoUrl}
-              // likes={300}
+              //  likes={300}
             />
           )
         )}

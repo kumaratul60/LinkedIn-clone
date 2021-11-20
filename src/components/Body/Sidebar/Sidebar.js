@@ -1,12 +1,20 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice";
 // import { Avatar } from '@material-ui/core';
+import LabelImportantIcon from "@material-ui/icons/LabelImportant";
 import "./Sidebar.css";
 
 function Sidebar() {
   const user = useSelector(selectUser);
+  const [viewed, setViewed] = useState(1);
+  const [connections, setConnections] = useState(1);
+
+  useEffect(() => {
+    setViewed(Math.floor(Math.random() * 100));
+    setConnections(Math.floor(Math.random() * 1000));
+  }, []);
 
   const recentItems = (topic) => (
     <div className="recentItem">
@@ -32,11 +40,11 @@ function Sidebar() {
       <div className="sidebar_stats">
         <div className="sidebar_stat">
           <p>Who viewed you</p>
-          <p className="stat_number">1,020</p>
+          <p className="stat_number">{viewed}</p>
         </div>
         <div className="sidebar_stat">
           <p>Views on your post</p>
-          <p className="stat_number">2,201</p>
+          <p className="stat_number">{connections}</p>
         </div>
       </div>
 
@@ -50,9 +58,8 @@ function Sidebar() {
       </div>
 
       <div className="sidebar_bottomLast">
-      <p>Discover more</p>
+        <p>Discover more</p>
       </div>
-      
     </div>
   );
 }

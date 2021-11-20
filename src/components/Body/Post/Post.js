@@ -1,5 +1,6 @@
-import { Avatar,IconButton } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import React, { useState, forwardRef } from "react";
+import ReactTimeago from "react-timeago";
 
 import InputOption from "../Feed/InputOption";
 import "./Post.css";
@@ -11,8 +12,10 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt"; // ref = reference
 // forwardRef for animation
 
 const Post = forwardRef(
-  ({ likes, name, description, message, photoUrl }, ref) => {
+  ({ likes, name, description, message, photoUrl, timestamp }, ref) => {
     const [liked, setLiked] = useState(false);
+
+    //
 
     return (
       <div ref={ref} className="post">
@@ -21,6 +24,12 @@ const Post = forwardRef(
           <div className="postInfo">
             <h2>{name}</h2>
             <p>{description}</p>
+            <p>
+              <ReactTimeago
+                date={new Date(timestamp?.toDate()).toUTCString()}
+                units="minute"
+              />
+            </p>
           </div>
         </div>
         <div className="post_body">
@@ -29,23 +38,23 @@ const Post = forwardRef(
         <div className="post_buttons">
           <div className="like_buttons">
             {liked ? (
-                <IconButton>
-              <ThumbUpAltIcon
-                className="color_Like"
-                onClick={(e) => setLiked(false)}
-              />
+              <IconButton>
+                <ThumbUpAltIcon
+                  className="color_Like"
+                  onClick={(e) => setLiked(false)}
+                />
               </IconButton>
             ) : (
               <IconButton>
-              <ThumbUpAltOutlinedIcon onClick={(e) => setLiked(true)} />
+                <ThumbUpAltOutlinedIcon onClick={(e) => setLiked(true)} />
               </IconButton>
             )}
           </div>
 
-
           <InputOption Icon={ChatOutlinedIcon} />
           <InputOption Icon={ShareOutlinedIcon} />
           <InputOption Icon={SendOutlinedIcon} />
+
           {/* <InputOption Icon={SendOutlinedIcon} title="Send" color="gray" /> */}
         </div>
       </div>

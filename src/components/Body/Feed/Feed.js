@@ -12,7 +12,8 @@ import firebase from "firebase";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice";
 import FlipMove from "react-flip-move";
-import UploadImage from "../ImageUpload/UploadImage";
+import Animation from "../../../components/Animation/Animation";
+import Loading from "../../loading.json";
 
 function Feed() {
   const user = useSelector(selectUser);
@@ -64,12 +65,7 @@ function Feed() {
           </form>
         </div>
         <div className="feed_inputOption">
-          <InputOption
-            Icon={ImageIcon}
-            title="Photo"
-            color="#70b5f9"
-            onClick={<UploadImage />}
-          />
+          <InputOption Icon={ImageIcon} title="Photo" color="#70b5f9" />
           <InputOption
             Icon={SubscriptionsIcon}
             title="Video"
@@ -85,20 +81,28 @@ function Feed() {
       </div>
 
       {/* Posts */}
-      <FlipMove>
-        {posts.map(
-          ({ id, data: { likes, name, description, message, photoUrl } }) => (
-            <Post
-              key={id}
-              name={name}
-              description={description}
-              message={message}
-              photoUrl={photoUrl}
-              //  likes={300}
-            />
-          )
-        )}
-      </FlipMove>
+      {Array.from(posts).length === 0 ? (
+        <Animation src={Loading} />
+      ) : (
+        <FlipMove>
+          {posts.map(
+            ({
+              id,
+              data: { likes, name, description, message, photoUrl, timestamp },
+            }) => (
+              <Post
+                key={id}
+                name={name}
+                description={description}
+                message={message}
+                photoUrl={photoUrl}
+                timestamp={timestamp}
+                //  likes={300}
+              />
+            )
+          )}
+        </FlipMove>
+      )}
     </div>
   );
 }

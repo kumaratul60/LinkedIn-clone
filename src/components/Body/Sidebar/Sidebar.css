@@ -94,14 +94,12 @@
   border-radius: 10px;
   cursor: pointer;
   color: #0a66c2;
-
 }
 
 .sidebar_bottom > p {
   font-size: 13px;
   padding-bottom: 10px;
 }
-
 
 .recentItem {
   display: flex;

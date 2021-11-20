@@ -6,6 +6,7 @@ import Sidebar from "./components/Body/Sidebar/Sidebar";
 import Widgets from "./components/Body/Widget/Widgets";
 import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
+import SignIn from "./components/Login/SignIn";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 
@@ -35,9 +36,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-
       {!user ? (
-        <Login />
+        // <Login />
+        <SignIn />
       ) : (
         <div className="app_body">
           <Sidebar />

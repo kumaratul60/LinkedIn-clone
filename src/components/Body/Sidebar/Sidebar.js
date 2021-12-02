@@ -32,7 +32,7 @@ function Sidebar() {
         />
         <Avatar src={user.photoUrl} className="sidebar_avatar">
           {/* email[0] displaying first charecter of email */}
-          {user.email[0]}
+          {/* {user.email[0]} */}
         </Avatar>
         <h2>{user.displayName}</h2>
         <h4>{user.email}</h4>

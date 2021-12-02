@@ -6,14 +6,15 @@ import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
 import InputOption from "./InputOption";
+import FlipMove from "react-flip-move";
+import Animation from "../../../components/Animation/Animation";
+import Loading from "../../loading.json";
+import InputEmoji from "react-input-emoji";
 import Post from "../Post/Post";
 import { db } from "../../../firebase";
 import firebase from "firebase";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice";
-import FlipMove from "react-flip-move";
-import Animation from "../../../components/Animation/Animation";
-import Loading from "../../loading.json";
 
 function Feed() {
   const user = useSelector(selectUser);
@@ -35,16 +36,20 @@ function Feed() {
   }, []);
 
   const sendPost = (e) => {
-    e.preventDefault();
+     e.preventDefault();
 
-    db.collection("posts").add({
-      name: user.displayName,
-      description: user.email,
-      message: input,
-      photoUrl: user.photoUrl || "",
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setInput("");
+    if (input) {
+      db.collection("posts").add({
+        name: user.displayName,
+        description: user.email,
+        message: input,
+        photoUrl: user.photoUrl || "",
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      setInput("");
+    } else {
+      alert("please enter message");
+    }
   };
 
   return (
@@ -59,6 +64,13 @@ function Feed() {
               type="text"
               placeholder="Start a post"
             />
+            {/* <InputEmoji
+              value={input}
+              onChange={setInput}
+              cleanOnEnter
+              onEnter={sendPost}
+              placeholder="Type a message"
+            /> */}
             <button onClick={sendPost} type="submit">
               Send
             </button>

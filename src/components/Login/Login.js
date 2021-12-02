@@ -1,5 +1,6 @@
-import { Button } from "@material-ui/core";
 import React, { useState } from "react";
+import Loader from "react-loader-spinner";
+import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import { auth, provider } from "../../firebase";
@@ -10,8 +11,21 @@ function Login() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingGuest, setIsLoadingGuest] = useState(false);
 
   const dispatch = useDispatch();
+
+  const loginAsGuest = (e) => {
+    e.preventDefault();
+    auth
+      .signInAnonymously()
+      .then(function () {
+        console.log("Logged in as Anonymous!");
+      })
+      .catch((error) => alert(error));
+    setIsLoadingGuest(true);
+  };
 
   const loginToApp = (e) => {
     e.preventDefault(); // it prevent from refesh the page
@@ -27,6 +41,7 @@ function Login() {
           })
         );
       })
+
       .catch((error) => alert(error));
   };
 
@@ -64,7 +79,6 @@ function Login() {
   return (
     <div className="login">
       <img
-      
         src="https://images.unsplash.com/photo-1592181572975-1d0d8880d175?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1793&q=80"
         alt="linkedin logo"
       />
@@ -95,7 +109,12 @@ function Login() {
           placeholder="Password"
         />
         <button type="submit" onClick={loginToApp}>
-          Sign In
+          {/* Sign In */}
+          {isLoading ? (
+            <Loader type="Oval" color="#fff" height={14} width={14} />
+          ) : (
+            "Sign In"
+          )}
         </button>
         {/* <br/> */}
         <span style={{ marginLeft: "10.5rem", color: "green" }}>OR</span>
@@ -103,12 +122,20 @@ function Login() {
         <Button color="primary" variant="contained" onClick={signIn}>
           Sign in with Google
         </Button>
+        <span style={{ marginLeft: "10.5rem", color: "green" }}>OR</span>
+        <Button color="primary" variant="contained" onClick={loginAsGuest}>
+          {isLoadingGuest ? (
+            <Loader type="Oval" color="#fff" height={14} width={14} />
+          ) : (
+            "Login as Guest"
+          )}
+        </Button>
       </form>
       <p>
-        Not a member?{" "}
-        <span className="login_register" onClick={register}>
+        Not a  LinkedIn member?{" "}
+        <strong className="login_register" onClick={register}>
           Register Now
-        </span>
+        </strong>
       </p>
     </div>
   );

@@ -24,17 +24,20 @@ function Widgets() {
         <InfoIcon />
       </div>
 
-      {newsArticle("Coronavirus: Lagos updates", "Tops news - 394 readers")}
-      {newsArticle("Bitcoin hits new high", "Tops news - 2,34 readers")}
+      {newsArticle(
+        "Stock market: Crisis is not permanent",
+        "Tops news - 594 readers"
+      )}
+      {newsArticle("Bitcoin hits new high", "Tops news - 2034 readers")}
       {newsArticle(
         "react is library not a framework",
         "Tops news - 5,324 readers"
       )}
       {newsArticle(
-        "Competetive coding is sport not key",
+        "Competitive coding is sport not key",
         "Tops news - 1,324 readers"
       )}
-      {newsArticle("covid-19 new varient", "Tops news - 6,324 readers")}
+      {newsArticle("covid-19 new variant", "Tops news - 6,324 readers")}
       {newsArticle("meme share", "Tops news - 22,324 readers")}
     </div>
   );

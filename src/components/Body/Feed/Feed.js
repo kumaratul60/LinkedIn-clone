@@ -36,9 +36,12 @@ function Feed() {
   }, []);
 
   const sendPost = (e) => {
-     e.preventDefault();
+    e.preventDefault();
 
-    if (input) {
+    if (!input.trim()) {
+      alert("please enter message");
+      return;
+    } else {
       db.collection("posts").add({
         name: user.displayName,
         description: user.email,
@@ -47,8 +50,6 @@ function Feed() {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
       setInput("");
-    } else {
-      alert("please enter message");
     }
   };
 
